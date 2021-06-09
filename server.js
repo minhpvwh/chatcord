@@ -25,6 +25,10 @@ io.on('connection', socket => {
     const user = userJoin(socket.id, username, room);
 
     socket.join(user.room);
+    if(io.sockets.adapter.rooms['Python'])
+        {
+            console.log("YEAH")
+        }
 
     // Welcome current user
     socket.emit('message', formatMessage(botName, 'Welcome to ChatCord!'));
